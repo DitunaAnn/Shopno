@@ -1,0 +1,973 @@
+@import "./_options"
+@import "./_default"
+@import "./_font"
+
+// ============================
+// MAIN CODE START
+// ============================
+
+
+
+.container
+	width: 100%
+	max-width: nth($mediaBp, 1)
+	padding:
+		left: 10px
+		right: 10px
+	margin:
+		left: auto
+		right: auto
+
+.nav
+	padding: 20px 0
+	&-list
+		padding-top: 30px
+		@include flex($jc: space-between, $ai: center)
+		li + li
+			margin-left: 75px
+		&__link
+			font-family: "Montserrat"
+			font-weight: bold
+			font-size: 25px
+			color: #181919
+			text-transform: uppercase
+			transition: 0.5s
+			&:hover
+				color: $mainC1
+	&-toggle
+		@include flex($jc: center, $ai: center)
+		display: none
+		width: 30px
+		height: 25px
+		cursor: pointer
+		font-size: 29px
+		color: rgb(0, 0, 0)
+		opacity: 0.6
+		&__close
+			display: none
+		&_active &__close
+			display: inline-block
+		&_active &__open
+			display: none
+
+.lines
+	li + li
+		margin-top: 5px
+	&-item
+		width: 30px
+		height: 4px
+		border-radius: 1px
+		background-color: rgb(0, 0, 0)
+
+.header
+	background-color: #eff0f2
+	padding: 60px 0 130px
+
+.topheader
+	&-grid
+		@include flex($jc: space-between, $ai: center)
+
+.logo
+	font-family: "Montserrat"
+	font-size: 17px
+	font-weight: bold
+	color: #000
+	text-transform: uppercase
+	text-shadow: 0px 0px 2px rgba(21, 21, 22, 0.75)
+	&-text
+		border: 6px solid rgb(23, 15, 28)
+		padding: 10px
+		span
+			color: #77efe5
+			font-size: 20px 
+
+		
+.preview
+	&-block
+		padding-top: 250px
+		text-align: center
+		text-transform: uppercase
+		font-family: "Montserrat"
+		position: relative
+		&__title
+			font-size: 45px
+			color: rgb(80, 80, 80)
+			text-transform: uppercase
+			text-align: center
+			text-shadow: 0px 9px 10px rgba(0, 0, 0, 0.24)
+			span
+				background-color: #b2f2ee
+			p + p
+				margin-top: 5px
+		&__button
+			margin-top: 130px
+		&__image
+			text-align: right
+			margin-right: 110px
+
+.about
+	&-block
+		padding: 125px 0 110px
+		background-color: #f8fafa
+		@include grid($s: 50px)
+		.slick-dots
+			bottom: -60px
+			left: 375px
+		&-grid
+			@include flex($jc: center, $ai: flex-start)
+ 
+			&__image
+				position: absolute
+				top: -40px
+				left: calc(50% - 392px/2)
+				img
+					border-radius: 3px
+					box-shadow: 0px 6px 24px 0px rgba(20, 20, 21, 0.17)
+			&__items
+				display: flex
+				flex-direction: column
+				align-items: center
+				padding: 90px 80px 70px
+				border-radius: 3px
+				background-color: rgb(234, 235, 237)
+				height: 412px
+				margin-top: 55px
+				&-width
+					width: 479px
+					position: relative
+		&__title
+			font-family: "Merriweather"
+			font-weight: bold
+			font-size: 20px
+			text-transform: uppercase
+			text-align: left
+			color: rgba(0, 0, 0, 0.749)
+			margin-top: 20px
+		&__subtitle
+			font-family: "Merriweather"
+			font-weight: bold
+			font-size: 17px
+			margin: 40px 0 25px
+			text-transform: uppercase
+			text-align: left
+			color: rgba(0, 0, 0, 0.749)
+		&__text
+			font-size: 16px
+			font-family: "Raleway"
+			color: rgba(0, 0, 0, 0.741)
+			font-weight: normal
+			max-width: 480px
+			line-height: 28px
+			margin-top: 25px
+			letter-spacing: 0.8px
+
+			p + p
+				margin-top: 40px
+
+.works
+	padding: 120px 0
+	background-color: #fff
+	&-grid
+		@include grid2($c: 3, $g: 15px)
+		&__col
+			img
+				width: 100%
+
+.services
+	padding: 120px 0
+	background-color: #f9fbfb
+	@include grid($s: 7px)
+	&-grid
+		@include flex($jc: center, $ai: stretch)
+		flex-wrap: wrap
+		&__image
+			position: relative
+			display: flex
+			&:before
+				content: ""
+				width: 100%
+				height: 100%
+				position: absolute
+				left: 0
+				top: 0
+				bottom: 0
+				background-color: rgb(0, 0, 0)
+				opacity: 0.6
+		&__info
+			width: 100%
+			position: absolute
+			left: 0
+			bottom: 0
+			padding-bottom: 50px
+			padding-left: 65px
+			padding-right: 22%
+			&_hidden
+				display: none
+			&-hidden
+				display: none
+				width: 100%
+				height: 100%
+				padding: 60px 133px 0 65px
+				position: absolute
+				left: 0
+				bottom: 0
+				background-color: rgb(109, 246, 235)
+				opacity: 0.969
+				&_active
+					display: block
+				.services-grid__info-button
+					margin-top: 70px
+					width: 20px
+				.services-grid__info-title
+					color: rgba(0, 0, 0, 0.831)
+				.services-grid__info-text
+					color: rgba(0, 0, 0, 0.749)
+					line-height: 1.75
+				.services-grid__info-btn
+					color: rgba(0, 0, 0, 0.4)
+					i
+						margin-left: 0
+					&:hover
+						color: #fff
+			&-title
+				font-size: 20px
+				font-family: "Merriweather"
+				color: rgba(255, 255, 255, 0.949)
+				font-weight: bold
+				text-transform: uppercase
+				margin-bottom: 30px
+			&-text
+				font-size: 16px
+				font-family: "Raleway"
+				color: rgba(255, 255, 255, 0.902)
+				line-height: 1.563
+				text-align: left
+				font-weight: normal
+			&-btn
+				font-size: 18px
+				font-family: "Raleway"
+				color: rgba(249, 251, 251, 0.902)
+				text-transform: uppercase
+				font-weight: normal
+				display: flex
+				align-items: center
+				transition: .3s
+				i
+					margin-left: 25px
+				&:hover
+					color: rgb(109, 246, 235)
+			&-button
+				margin-top: 55px
+				width: 160px
+
+// .services-grid__col:nth-child(1)
+// 	flex: 2
+
+// .services-grid__col:nth-child(2)
+// 	flex: 1
+
+.slick-initialized .slick-slide
+	display: flex
+
+.team
+	padding: 120px 0
+	background-color: #fff
+	@include grid($s: 10px)
+	.text
+		font-size: 17px
+	&-grid
+		@include flex($jc: center, $ai: center)
+		flex-wrap: wrap
+		&__col
+			width: calc(100% / 3)
+		&__title
+			font-size: 20px
+			font-family: "Merriweather"
+			color: rgba(39, 39, 39, 0.949)
+			font-weight: bold
+			text-transform: uppercase
+			span
+				font-weight: normal
+				font-style: italic
+				font-size: 16px
+				color: #757776
+		&__text
+			margin-top: 20px
+			font-size: 16px
+			font-family: "Raleway"
+			font-weight: normal
+			color: rgba(0, 0, 0, 0.8)
+			line-height: 1.5
+			text-align: left
+			max-width: 240px
+		&__items
+			position: relative
+			transition: .5s
+			&:hover
+				.team-grid__item
+					display: block
+			img
+				width: 100%
+		&__item
+			position: absolute
+			bottom: 15px
+			left: calc(50% - 335px/2)
+			display: none
+			&-visible
+				display: block
+		&__info
+			background-color: rgb(109, 246, 235)
+			opacity: 0.98
+			box-shadow: 0px 7px 16px 0px rgba(20, 20, 21, 0.18)
+			padding: 40px 50px 40px 35px
+			width: 335px
+			position: relative
+			&:before
+				content: ""
+				position: absolute
+				top: -30px
+				left: 20px
+				width: 20px
+				border: 10px solid transparent
+				border-bottom: 20px solid rgb(109, 246, 235)
+		&__icon
+			margin-top: 35px
+			@include flex($jc: flex-start, $ai: center)
+			li + li
+				margin-left: 15px
+		&__link
+			font-size: 15px
+			color: rgba(0, 0, 0, 0.702)
+			transition: .3s
+			&:hover
+				color: #fff
+
+
+.review
+	background-color: rgb(249, 251, 251)
+	padding: 120px 0
+	@include grid($s: 40px)
+	.text
+		font-size: 17px
+		margin-bottom: 80px
+	&-slide
+		position: relative
+	&-grid
+		@include flex($jc: space-between, $ai: stretch)
+		text-align: center
+		padding: 50px 0
+		&__image
+			position: absolute
+			top: -25px
+			left: calc(50% - 319px/2)
+			img
+				border-radius: 3px
+				box-shadow: 0px 6px 24px 0px rgba(20, 20, 21, 0.17)
+		&__items
+			display: flex
+			flex-direction: column
+			align-items: center
+			padding: 90px 80px 70px
+			border-radius: 3px
+			background-color: rgb(234, 235, 237)
+			height: 362px
+			&-width
+				width: 393px
+				position: relative
+		&__title
+			font-size: 20px
+			font-family: "Merriweather"
+			color: rgba(0, 0, 0, 0.949)
+			font-weight: bold
+			text-transform: uppercase
+			span
+				font-weight: normal
+				font-style: italic
+				font-size: 16px
+				color: #99999a
+		&__text
+			font-size: 16px
+			margin: 25px 0 
+			font-family: "Raleway"
+			font-weight: normal
+			line-height: 27px
+			color: rgba(0, 0, 0, 0.702)
+			// max-width: 500px
+		&__stars
+			@include flex($jc: space-between, $ai: center)
+			width: 110px
+			margin: 5px auto
+			i
+				color: rgb(242, 218, 59)
+
+.logo-block
+	padding: 100px 0
+	background-color: #fff
+	&-grid
+		@include flex($jc: space-between, $ai: center)
+		flex-wrap: wrap
+	&-item
+		@include flex($jc: center, $ai: center)
+		a
+			filter: brightness(0)
+			transition: .3s
+			&:hover
+				filter: brightness(1)
+				img
+					filter: opacity(1)
+		img
+			filter: opacity(0.3)
+
+.logo-block-grid__col:nth-child(1), .logo-block-grid__col:nth-child(2), .logo-block-grid__col:nth-child(3)
+	width: calc(100% / 3)
+	margin-bottom: 50px
+.logo-block-grid__col:nth-child(1)
+	.logo-block-item
+		@include flex($jc: flex-end, $ai: center)
+.logo-block-grid__col:nth-child(2)	
+	.logo-block-item
+		@include flex($jc: center, $ai: center)
+.logo-block-grid__col:nth-child(3)	
+	.logo-block-item
+		@include flex($jc: flex-start, $ai: center)
+.contact
+	padding: 120px 0
+	background: url(../images/contact-bg.jpg) no-repeat center/cover
+	@include grid($s: 15px)
+	&-bg
+		position: relative
+		&:before
+			content: ""
+			width: 100%
+			height: 100%
+			position: absolute
+			left: 0
+			top: 0
+			background-color: rgb(248, 250, 251)
+			opacity: 0.671
+		.container
+			position: relative
+			z-index: 1
+	&-grid
+		@include flex($jc: space-between, $ai: stretch)
+		&__col
+			background-color: rgb(2, 22, 35)
+			opacity: 0.71
+			box-shadow: 0px 0px 30px 0px rgba(21, 21, 21, 0.12)
+			padding: 20px 25px 20px
+			display: flex
+			flex-direction: column
+		&__text
+			margin-top: 15px
+			font-family: "Raleway"
+			font-size: 15px
+			font-weight: normal
+			color: rgba(255, 255, 255, 0.702)
+			p + p
+				margin-top: 10px
+		.contact-grid__text + .contact-grid__text
+			margin-top: 30px
+		&__image
+			margin-top: 25px
+			img
+				max-width: 100%
+
+.form
+	padding-top: 15px
+	font-size: 15px
+	width: 550px
+	color: rgba(255, 255, 255, 0.6)
+	overflow: hidden	
+	&-wrap
+	&-item
+		position: relative
+		& + &
+			margin-top: 25px
+		&__input
+			display: block
+			width: 100%
+			border: none
+				bottom: 1px solid rgba(255, 255, 255, 0.6)
+			padding: 0 0 15px
+			font-family: "Raleway"
+			font-weight: normal
+			background-color: transparent
+			position: relative
+			z-index: 1
+		&__text
+			position: absolute
+			left: 0
+			top: 50%
+			transform: translate(0, -50%)
+			transition: .3s
+			&-textarea
+				top: 10%
+		textarea
+			height: 115px
+			resize: none
+		&__line
+			border-bottom: 1px solid rgb(113, 246, 235)
+			width: 0
+			position: absolute
+			left: 0
+			bottom: 0
+			z-index: 2
+			transition: .5s
+		&__input:focus ~ &__line, &__input:valid ~ &__line
+			width: 100%
+		&__input:focus ~ &__text
+			top: 0
+			transform: translate(0, -100%)
+			font-size: 0.8em
+		&__input:valid ~ &__text
+			top: 0
+			transform: translate(0, -100%)
+			font-size: 0.8em
+	&__button
+		margin-top: 35px
+		margin-bottom: 5px
+	&__btn
+		display: block
+		font-size: 18px
+		width: 245px
+		text-align: center
+		border-radius: 2px
+		background-color: rgb(110, 238, 228)
+		padding: 20px 35px
+		cursor: pointer
+		border: none
+		color: rgba(0, 0, 0, 0.702)
+		height: 100%
+		border: 1px solid rgb(110, 238, 228)
+		transition: .3s
+		&:hover
+			background-color: transparent
+
+
+
+.social
+	padding: 90px 0
+	background-color: rgb(38, 43, 46)
+	text-align: center
+	&__title
+		font-size: 16px
+		font-family: "Raleway"
+		color: rgba(255, 255, 255, 0.8)
+		font-weight: normal
+		text-transform: uppercase
+		margin-bottom: 15px
+	&-list
+		@include flex($jc: center, $ai: center)
+		li + li
+			margin-left: 10px
+		&__link
+			background-color: rgba(138, 138, 138, 0.4)
+			color:  rgb(250, 244, 244)
+			font-size: 20px
+			width: 45px
+			height: 40px
+			@include flex($jc: center, $ai: center)
+			transition: .3s
+			&:hover
+				background-color: rgb(113, 246, 235)
+				color:  rgba(0, 0, 0, 0.949)
+	&__text
+		margin-top: 40px
+		font-size: 16px
+		font-family: "Raleway"
+		color: rgba(255, 255, 255, 0.4)
+		font-weight: 500
+		a
+			color: rgba(255, 255, 255, 0.4)
+			transition: .3s
+			&:hover
+				color: rgb(113, 246, 235)
+
+
+
+// ============================
+// MAIN CODE END
+// ============================
+
+@for $i from 1 to length($mediaBp)
+	@media (max-width: nth($mediaBp, $i))
+		.container
+			max-width: nth($mediaBp, $i + 1)
+
+// ============================
+// MEDIA QUARIES
+// ============================
+@media (max-width: nth($mediaBp,1))
+
+	.topheader
+		position: fixed
+		top: 0
+		left: 0
+		right: 0
+		background-color: #eff0f2
+		padding: 60px 0 30px
+		z-index: 50
+		&-grid
+			justify-content: space-between
+		
+	.nav
+		position: fixed
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		z-index: -1
+		background-color: #eff0f2
+		padding: 140px 0 40px
+		overflow: scroll
+			x: hidden
+			y: auto
+		visibility: hidden
+		opacity: 0
+		transition: .3s
+		&_active
+			opacity: 1
+			visibility: visible
+			z-index: 2
+		&_active &-list
+			transform: translate(0, 0)
+		&-list
+			flex-direction: column
+			align-items: center
+			transform: translate(0, 30px)
+			transition: .3s
+			li + li
+				margin: 0
+			&__link
+				display: block
+				line-height: 1.8
+
+	.nav-toggle
+		display: flex
+		z-index: 100
+
+	.about-block .slick-dots
+		left: 265px
+
+
+
+@media (max-width: nth($mediaBp,2))
+	.topheader
+		padding: 20px 0
+	.preview-block
+		padding-top: 100px
+
+	.text
+		margin-bottom: 70px
+
+	.title
+		font-size: 33px
+
+	.about-block, .works, .services, .review, .logo-block, .contact, .social, .team
+		padding: 70px 0
+
+	.about-block
+		.slick-dots
+			bottom: 0
+			left: 225px
+		&__text p + p
+			margin-top: 10px
+
+	.team-grid__col
+		width: 50%
+
+	.services
+		&-grid
+			&__col
+				width: 50%
+			&__image
+				img
+					max-width: 100%
+			&__info
+				&-hidden
+					padding: 50px
+					.services-grid__info-btn i
+						position: absolute
+						bottom: 50px
+				&-title
+					font-size: 18px
+
+	.review-grid__items
+		padding: 0 30px
+		justify-content: center
+
+	.form
+		width: 400px
+
+@media (max-width: nth($mediaBp,3))
+
+	.about-block
+		&-grid
+			flex-direction: column
+			align-items: center
+			&__col
+				width: 100%
+				@include flex($jc: center, $ai: center)
+		&__text
+			max-width: 100%
+			text-align: center
+		&__title
+			text-align: center
+		&__subtitle
+			margin: 15px 0
+			text-align: center
+		.slick-dots
+			bottom: -30px
+			left: calc(50% - 25px)
+
+	.services
+		&-grid
+			position: relative
+			&__col
+				justify-content: center
+			.slick-dots
+				width: 75px
+				left: calc(50% - 75px/2)
+
+	.review
+		.text
+			margin-bottom: 30px
+		&-grid__col
+			width: 50%
+
+	.logo-block
+		@include grid($s: 15px)
+		&-grid
+			@include flex($jc: center, $ai: center)
+			flex-wrap: wrap
+			&__col
+				width: calc(100% / 3)
+
+	.logo-block-grid__col:nth-child(1), .logo-block-grid__col:nth-child(2), .logo-block-grid__col:nth-child(3)
+		margin-bottom: 0
+
+	.logo-block-grid__col:nth-child(1)
+		.logo-block-item
+			@include flex($jc: center, $ai: center)
+	.logo-block-grid__col:nth-child(2)	
+		.logo-block-item
+			@include flex($jc: center, $ai: center)
+	.logo-block-grid__col:nth-child(3)	
+		.logo-block-item
+			@include flex($jc: center, $ai: center)
+
+	
+	.form
+		width: 320px
+	.contact
+		&-grid__image
+			width: 320px
+
+
+@media (max-width: nth($mediaBp,4))
+
+	.title
+		font-size: 30px
+
+	.text
+		font-size: 16px
+		margin-bottom: 30px
+
+	.about-block
+		@include grid($s: 20px)
+		&-grid
+			flex-direction: column
+
+	.works
+		&-grid
+			grid-template-columns: repeat(2, 1fr)
+
+	.team
+		&-grid
+			&__info
+				width: 250px
+				padding: 20px
+			&__item
+				left: calc(50% - 250px/2)
+			&__title
+				font-size: 18px
+			&__text
+				margin-top: 10px
+				font-size: 14px
+			&__icon
+				margin-top: 10px
+
+	.review-grid
+		flex-wrap: wrap
+		&__col
+			width: 100%
+			@include flex($jc: center, $ai: center)
+
+	.contact
+		&-grid
+			flex-wrap: wrap
+			&__col
+				width: 100%
+				text-align: center
+				align-items: center
+			&__form
+				width: 80%
+			&__image
+				width: 100%
+
+	.contact-grid__col + .contact-grid__col
+		margin-top: 15px
+
+	.form
+		width: 100%
+		&__btn
+			margin: 5px auto
+	
+@media (max-width: nth($mediaBp,5))
+
+	.title
+		font-size: 25px
+
+	.text
+		font-size: 14px
+
+	.header
+		padding-bottom: 70px
+	.nav
+		padding-top: 80px
+		&-list__link
+			font-size: 16px
+	.preview
+		&-block
+			&__button
+				margin-top: 70px
+			&__image
+				display: none
+
+	.about-block
+		.text
+			margin-bottom: 0
+		&__text
+			font-size: 14px
+			margin-top: 15px
+			line-height: 22px
+			text-align: justify
+		&__title
+			font-size: 18px
+		&-grid
+			&__image
+				left: calc(50% - 250px/2)
+				top: -30px
+				img
+					width: 250px
+			&__items
+				height: 250px
+				&-width
+					width: 310px
+
+	.services
+		&-grid
+			&__info
+				&-text
+					font-size: 14px
+
+
+	.team
+		&-grid
+			&__col
+				width: 100%
+				@include flex($jc: center, $ai: center)
+			.slick-dots
+				width: 75px
+				bottom: -35px
+			.slick-arrow
+				bottom: 5px
+			.slick-arrow.slick-next
+				right: 50px
+			.slick-arrow.slick-prev
+				right: 100px
+		.text
+			font-size: 14px
+			margin-bottom: 10px
+
+	.review
+		.text
+			font-size: 14px
+			margin-bottom: 10px
+		&-grid
+			&__image
+				left: calc(50% - 250px/2)
+				img
+					width: 250px
+			&__items
+				height: 275px
+			&__text
+				font-size: 14px
+				margin: 10px 0
+				line-height: 20px
+			&__title
+				font-size: 18px
+			&__col
+				padding: 30px
+
+	.slick-dots
+		left: 20px
+		bottom: -20px
+
+	.slick-arrow
+		&:before
+			width: 40px
+			height: 40px
+
+	.slick-arrow.slick-next
+		right: 40px
+
+	.slick-arrow.slick-prev
+		right: 90px
+	
+	.logo-block
+		&-grid
+			&__col
+				width: 50%
+
+	.logo-block-grid__col:nth-child(1), .logo-block-grid__col:nth-child(2), .logo-block-grid__col:nth-child(3)
+		width: 50%
+
+
+	.contact
+		&-grid
+			justify-content: center
+			&__col
+				width: 95%
+				padding: 20px 10px 20px
+			&__text
+				font-size: 14px
+				margin-top: 0
+			&__image
+				margin-top: 10px
+			.contact-grid__text + .contact-grid__text
+				margin-top: 10px
+
+	.form
+		&__button
+			margin-top: 10px
+		&__btn
+			font-size: 16px
+			padding: 15px
+			width: 190px
+
+	.social, .logo-block, .review, .team, .works
+		padding: 50px 0
+
+	.social
+		&__text
+			font-size: 14px
+			margin-top: 25px
+
+@media (max-width: nth($mediaBp,6))
+
+		.review-grid__image
+			img
+				box-shadow: none
+
+
